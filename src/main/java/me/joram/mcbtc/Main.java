@@ -10,7 +10,7 @@ public final class Main extends JavaPlugin {
 // Dit is een test
         // does develop work?
     }
-// heh
+// Lil change
     @Override
     public void onDisable() {
         // Plugin shutdown logic
