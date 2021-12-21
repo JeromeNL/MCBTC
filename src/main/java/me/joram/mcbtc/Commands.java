@@ -14,13 +14,15 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Commands implements CommandExecutor {
 
-    private Main main;
+    final private Main main;
+    final private Double gambleChanceNumber;
     private NumberFormat nf;
 
     public Commands(Main main) {
         this.main = main;
         nf = new DecimalFormat(
                 "################################################.###########################################");
+        gambleChanceNumber = 0.45;
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
@@ -165,7 +167,7 @@ public class Commands implements CommandExecutor {
     public double gamble(Double gambleAmount, Player gambler) {
 
         if (getCurrentAmount(gambler) < gambleAmount) {
-            gambler.sendMessage(ChatColor.RED
+            gambler.sendMessage(ChatColor.DARK_RED
                     + "You are not doing well financially. You are now trying to gamble with money you don't have.");
             return 0.0;
         }
@@ -176,7 +178,7 @@ public class Commands implements CommandExecutor {
         main.getConfig().set("balances." + gambler.getUniqueId(), (gamblerBalance - gambleAmount));
         main.saveConfig();
 
-        if (chance < 0.45) {
+        if (chance < gambleChanceNumber) {
             Double wonAmount = gambleAmount * 2;
             gamblerBalance = getCurrentAmount(gambler);
             main.saveConfig();
