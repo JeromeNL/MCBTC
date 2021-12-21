@@ -1,17 +1,27 @@
 package me.joram.mcbtc;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Main extends JavaPlugin {
+public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+
+        FileConfiguration config = getConfig();
+
+        // registration of Listeners
+        getServer().getPluginManager().registerEvents(new MainListener(this), this);
+        getServer().getPluginManager().registerEvents(new LedgerListener(this), this);
+
+        // registration of Commands
+        this.getCommand("wallet").setExecutor(new Commands(this));
+        this.getCommand("btcpay").setExecutor(new Commands(this));
+        this.getCommand("gamble").setExecutor(new Commands(this));
+
+        // Alfa
+        this.getCommand("ledger").setExecutor(new LedgerCommands(this));
 
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
 }

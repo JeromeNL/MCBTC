@@ -5,3 +5,13 @@ api-version: 1.18
 authors: [ JeromeNL ]
 description: Just a simple Bitcoin plugin for your Minecraft server!
 website: https://www.spigotmc.org/resources/simple-bitcoin-plugin-1-17.98350/
+
+commands:
+  wallet:
+    description: Shows BTC in your wallet
+  ledger:
+    description: Opens your ledger
+  btcpay:
+    description: Pay other players with BTC
+  gamble:
+    description: Gamble with your BTC
