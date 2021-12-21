@@ -1,0 +1,7 @@
+name: MCBTC
+version: '${project.version}'
+main: me.joram.mcbtc.Main
+api-version: 1.18
+authors: [ JeromeNL ]
+description: Just a simple Bitcoin plugin for your Minecraft server!
+website: https://www.spigotmc.org/resources/simple-bitcoin-plugin-1-17.98350/
