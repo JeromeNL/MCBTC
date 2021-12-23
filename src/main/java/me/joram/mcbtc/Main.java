@@ -8,7 +8,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        FileConfiguration config = getConfig();
+
 
         // registration of Listeners
         getServer().getPluginManager().registerEvents(new MainListener(this), this);
@@ -18,9 +18,9 @@ public class Main extends JavaPlugin {
         this.getCommand("wallet").setExecutor(new Commands(this));
         this.getCommand("btcpay").setExecutor(new Commands(this));
         this.getCommand("gamble").setExecutor(new Commands(this));
-
-        // Alfa
         this.getCommand("ledger").setExecutor(new LedgerCommands(this));
+
+        // alfa version
 
     }
 

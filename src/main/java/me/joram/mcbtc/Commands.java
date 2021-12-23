@@ -153,7 +153,7 @@ public class Commands implements CommandExecutor {
         main.getConfig().set("balances." + receiver.getUniqueId(), (balanceReceiver + amountToSent));
 
         main.saveConfig();
-        sender.sendMessage(ChatColor.AQUA + "You have succesfully transfered: " + ChatColor.BLUE + amountToSentString
+        sender.sendMessage(ChatColor.AQUA + "You have successfully transferred: " + ChatColor.BLUE + amountToSentString
                 + ChatColor.AQUA + " BTC to " + ChatColor.BLUE + receiver.getName() + ChatColor.AQUA + ".");
         receiver.sendMessage(ChatColor.AQUA + "You have received an amount of: " + ChatColor.BLUE + amountToSentString
                 + ChatColor.AQUA + " BTC from " + ChatColor.BLUE + sender.getName() + ChatColor.AQUA + ".");

@@ -175,7 +175,7 @@ public class LedgerCommands implements CommandExecutor {
         main.saveConfig();
         main.reloadConfig();
 
-        player.sendMessage(ChatColor.AQUA + "You have succesfully sent " + ChatColor.BLUE + amountToSetString + ChatColor.AQUA
+        player.sendMessage(ChatColor.AQUA + "You have successfully sent " + ChatColor.BLUE + amountToSetString + ChatColor.AQUA
                 + " from your wallet to your ledger.");
 
         return true;
@@ -193,7 +193,7 @@ public class LedgerCommands implements CommandExecutor {
         Double balanceLedger = getCurrentLedgerAmount(player);
 
         if (balanceLedger < getAmount) {
-            player.sendMessage(ChatColor.RED + "You don't have enought BTC on your ledger!");
+            player.sendMessage(ChatColor.RED + "You don't have enough BTC on your ledger!");
             return false;
         }
 
@@ -206,7 +206,7 @@ public class LedgerCommands implements CommandExecutor {
         main.saveConfig();
         main.reloadConfig();
 
-        player.sendMessage(ChatColor.AQUA + "You have succesfully withdrawn: " + ChatColor.BLUE + amountToGetString
+        player.sendMessage(ChatColor.AQUA + "You have successfully withdrawn: " + ChatColor.BLUE + amountToGetString
                 + ChatColor.AQUA + " from your ledger to your wallet");
 
         return true;
